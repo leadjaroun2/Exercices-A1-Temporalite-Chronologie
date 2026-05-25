@@ -9,8 +9,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary: #003057; /* Bleu Marine Management */
-            --accent: #00A9CE;  /* Bleu Azur */
+            --primary: #003057;
+            --accent: #00A9CE;
             --success: #27AE60;
             --error: #E74C3C;
             --bg: #F8FAFC;
@@ -36,7 +36,6 @@
             padding: 40px;
         }
 
-        /* Barre de progression */
         .header {
             display: flex;
             justify-content: space-between;
@@ -60,7 +59,6 @@
             transition: width 0.4s ease;
         }
 
-        /* Zone Question */
         h1 {
             font-family: 'Playfair Display', serif;
             color: var(--primary);
@@ -91,7 +89,6 @@
             font-style: italic;
         }
 
-        /* Boutons */
         .options-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -127,7 +124,6 @@
             color: #991B1B;
         }
 
-        /* Feedback */
         .feedback {
             margin-top: 25px;
             padding: 15px;
@@ -153,7 +149,6 @@
 
         .next-btn:hover { background: #002340; }
 
-        /* Ecran Final */
         #result-screen { text-align: center; display: none; }
         .score-big { font-size: 64px; color: var(--primary); font-weight: 800; margin: 20px 0; }
     </style>
@@ -170,7 +165,7 @@
             <span id="score-count" style="font-weight: 600; color: var(--primary);">Score: 0</span>
         </div>
 
-        <h1>Chronologie & Étapes</h1>
+        <h1>Chronologie &amp; Récit (A1)</h1>
         
         <div class="question-box">
             <div class="question-text" id="q-text">Chargement...</div>
@@ -192,26 +187,26 @@
 
 <script>
     const questions = [
-        { q: "________, je me réveille à 7h00.", t: "First, I wake up at 7:00 AM.", o: ["Enfin", "D'abord", "Après", "Ensuite"], a: 1 },
-        { q: "Je prends un café, ________ je prends ma douche.", t: "I have a coffee, then I take my shower.", o: ["Puis", "D'abord", "Avant", "Jamais"], a: 0 },
-        { q: "________ la douche, je m'habille.", t: "After the shower, I get dressed.", o: ["D'abord", "Enfin", "Après", "Pendant"], a: 2 },
-        { q: "Je mange mon petit-déjeuner ________ de partir.", t: "I eat my breakfast before leaving.", o: ["après", "enfin", "puis", "avant"], a: 3 },
-        { q: "________, je commence mon travail à 9h00.", t: "To start with, I begin my work at 9:00 AM.", o: ["Enfin", "Pour commencer", "Après", "Ensuite"], a: 1 },
-        { q: "Je travaille deux heures, ________ je fais une pause.", t: "I work for two hours, then I take a break.", o: ["ensuite", "d'abord", "enfin", "avant"], a: 0 },
-        { q: "A midi, je déjeune, ________ je retourne au bureau.", t: "At noon, I have lunch, then I go back to the office.", o: ["enfin", "d'abord", "puis", "avant"], a: 2 },
-        { q: "________ le déjeuner, je bois un thé.", t: "After lunch, I drink a tea.", o: ["Après", "D'abord", "Enfin", "Ensuite"], a: 0 },
-        { q: "J'étudie le français, ________ je rentre à la maison.", t: "I study French, then I go home.", o: ["enfin", "ensuite", "d'abord", "avant"], a: 1 },
-        { q: "________, je termine ma journée à 18h00.", t: "Finally, I finish my day at 6:00 PM.", o: ["D'abord", "Ensuite", "Enfin", "Puis"], a: 2 },
-        { q: "Je fais les courses ________ de cuisiner.", t: "I go shopping before cooking.", o: ["après", "pendant", "enfin", "avant"], a: 3 },
-        { q: "________, je lave les légumes.", t: "First, I wash the vegetables.", o: ["Enfin", "D'abord", "Ensuite", "Après"], a: 1 },
-        { q: "________, je coupe les carottes.", t: "Next, I cut the carrots.", o: ["Ensuite", "D'abord", "Enfin", "Avant"], a: 0 },
-        { q: "Je prépare le repas, ________ je dîne.", t: "I prepare the meal, then I have dinner.", o: ["enfin", "d'abord", "puis", "avant"], a: 2 },
-        { q: "Je dîne ________ je regarde la télévision.", t: "I have dinner and after I watch TV.", o: ["avant", "pendant", "après", "d'abord"], a: 2 },
-        { q: "________ de dormir, je me brosse les dents.", t: "Before sleeping, I brush my teeth.", o: ["Après", "Avant", "Pendant", "Enfin"], a: 1 },
-        { q: "Je lis un peu ________ me coucher.", t: "I read a bit before going to bed.", o: ["après", "enfin", "puis", "avant"], a: 3 },
-        { q: "________, je m'endors à 23h00.", t: "Finally, I fall asleep at 11:00 PM.", o: ["Enfin", "D'abord", "Ensuite", "Puis"], a: 0 },
-        { q: "Quelle est la première étape ? ________.", t: "What is the first step? First.", o: ["Enfin", "D'abord", "Ensuite", "Après"], a: 1 },
-        { q: "Quelle est la dernière étape ? ________.", t: "What is the last step? Finally.", o: ["D'abord", "Après", "Ensuite", "Enfin"], a: 3 }
+        { q: "________, je prépare mes affaires pour l'école. (Action 1)", t: "First, I prepare my things for school.", o: ["Enfin", "D'abord", "Ensuite", "Après"], a: 1 },
+        { q: "Au ________, l'histoire est très intéressante.", t: "At the beginning, the story is very interesting.", o: ["fin", "ensuite", "début", "puis"], a: 2 },
+        { q: "J'écoute le professeur, ________ je fais les exercices.", t: "I listen to the teacher, then I do the exercises.", o: ["d'abord", "au début", "puis", "finalement"], a: 2 },
+        { q: "Nous mangeons à la cantine. ________, nous allons au laboratoire.", t: "We eat at the cafeteria. Next, we go to the lab.", o: ["D'abord", "Ensuite", "Finalement", "Au début"], a: 1 },
+        { q: "Je finis mes devoirs. ________, je regarde un dessin animé.", t: "I finish my homework. After, I watch a cartoon.", o: ["Après", "D'abord", "Au début", "Enfin"], a: 0 },
+        { q: "________, je ferme mon livre et je dors. (Dernière action)", t: "Finally, I close my book and I sleep.", o: ["D'abord", "Ensuite", "Enfin", "Puis"], a: 2 },
+        { q: "________ de la journée, je parle avec mes parents.", t: "At the end of the day, I talk with my parents.", o: ["Au début", "À la fin", "Ensuite", "Puis"], a: 1 },
+        { q: "Je cherche mes clés, je trouve mes clés et, ________, je ouvre la porte.", t: "I look for my keys, I find my keys and, finally, I open the door.", o: ["d'abord", "ensuite", "finalement", "au début"], a: 2 },
+        { q: "________, j'achète un billet de train. (Étape 1)", t: "First, I buy a train ticket.", o: ["Enfin", "Après", "D'abord", "Ensuite"], a: 2 },
+        { q: "Le train part. ________, je regarde le paysage.", t: "The train leaves. Then, I look at the landscape.", o: ["Au début", "Puis", "D'abord", "Enfin"], a: 1 },
+        { q: "Le voyage est long mais, ________, j'arrive à Paris !", t: "The trip is long but, finally, I arrive in Paris!", o: ["d'abord", "au début", "ensuite", "finalement"], a: 3 },
+        { q: "________, je prépare le pain et le beurre.", t: "First, I prepare the bread and the butter.", o: ["D'abord", "Après", "Enfin", "Ensuite"], a: 2 },
+        { q: "Je coupe le pain, ________ je mets le beurre.", t: "I cut the bread, next I put the butter.", o: ["au début", "d'abord", "ensuite", "finalement"], a: 2 },
+        { q: "________ de la recette, le gâteau est délicieux.", t: "At the end of the recipe, the cake is delicious.", o: ["À la fin", "Au début", "Puis", "Après"], a: 0 },
+        { q: "________, je fais du jogging dans le parc. (Action initiale)", t: "First, I go jogging in the park.", o: ["Après", "D'abord", "Puis", "Enfin"], a: 1 },
+        { q: "Je cours un kilomètre, ________ je bois de l'eau.", t: "I run a kilometer, then I drink water.", o: ["d'abord", "au début", "puis", "finalement"], a: 2 },
+        { q: "Je marche un peu et, ________, je rentre chez moi.", t: "I walk a bit and, finally, I go home.", o: ["d'abord", "ensuite", "enfin", "au début"], a: 2 },
+        { q: "________ du film, l'acteur principal voyage en Afrique.", t: "At the beginning of the movie, the main actor travels to Africa.", o: ["Au début", "À la fin", "Ensuite", "Enfin"], a: 0 },
+        { q: "Choisissez le synonyme de 'Puis' :", t: "Choose the synonym of 'Puis':", o: ["D'abord", "Au début", "Ensuite", "Enfin"], a: 2 },
+        { q: "Choisissez le synonyme de 'Enfin' :", t: "Choose the synonym of 'Enfin':", o: ["D'abord", "Finalement", "Ensuite", "Puis"], a: 1 }
     ];
 
     let currentIdx = 0;
